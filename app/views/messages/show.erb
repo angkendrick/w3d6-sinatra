@@ -10,6 +10,9 @@
     <a href="<%= @message.url %>"><%= @message.url %></a>
   </p>
 <% end %>
+<p>
+  <%= @message.created_at %>
+</p>
 
 <hr/>
 <a href="/messages">Back to all Messages</a>
