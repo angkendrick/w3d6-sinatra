@@ -15,7 +15,6 @@ end
 
 post '/messages' do #handles http posts comming from form
   @message = Message.new(
-    title: params[:title],
     content: params[:content],
     author: params[:author]
   )
