@@ -16,7 +16,8 @@ end
 post '/messages' do #handles http posts comming from form
   @message = Message.new(
     content: params[:content],
-    author: params[:author]
+    author: params[:author],
+    url: params[:url]
   )
   if @message.save
     redirect '/messages'

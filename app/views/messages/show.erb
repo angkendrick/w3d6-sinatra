@@ -5,6 +5,11 @@
 <p>
   <%= @message.content %>
 </p>
+<%if @message.url? %>
+  <p>
+    <a href="<%= @message.url %>"><%= @message.url %></a>
+  </p>
+<% end %>
 
 <hr/>
 <a href="/messages">Back to all Messages</a>
