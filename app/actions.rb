@@ -13,6 +13,17 @@ get '/messages/new' do
   erb :'messages/new'
 end
 
+get '/messages/author/:author' do
+  #@author = Message.where author: params[:author]
+  @messages = Message.where author: params[:author]
+  erb :'messages/author'
+end
+
+get '/messages/:id' do
+  @message = Message.find params[:id]
+  erb :'messages/show'
+end
+
 post '/messages' do #handles http posts comming from form
   @message = Message.new(
     content: params[:content],
@@ -25,10 +36,4 @@ post '/messages' do #handles http posts comming from form
     erb :'messages/new'
   end
 end
-
-get '/messages/:id' do
-  @message = Message.find params[:id]
-  erb :'messages/show'
-end
-
 
